@@ -27,7 +27,7 @@ def login():
     params = {
         "client_key": CLIENT_KEY,
         "response_type": "code",
-        "scope": "user.info.profile,user.info.stats,video.list",
+        "scope": "user.info.basic",
         "redirect_uri": REDIRECT_URI,
         "state": state,
     }

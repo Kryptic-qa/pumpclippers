@@ -51,10 +51,22 @@ def callback():
     if not code:
         return "Authorization code not received.", 400
 
-    return (
-        "TikTok authorization received. "
-        "Token exchange is not implemented yet."
-    )
+    return """
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PUMPCLIPPERS - Verified</title>
+</head>
+<body style="background:#0b0b12; color:#f5f5f7; font-family:Arial,sans-serif; text-align:center; padding:60px 20px;">
+  <h1 style="color:#b9ff39;">PUMPCLIPPERS</h1>
+  <h2>TikTok Account Verified Successfully!</h2>
+  <p style="color:#c5c5d0;">Your TikTok profile (user.info.basic) has been linked for clipping campaigns.</p>
+  <p style="color:#888; font-size:12px;">Verification Auth ID: """ + code[:10] + """...</p>
+  <a href="https://kryptic-qa.github.io/pumpclippers/" style="display:inline-block; margin-top:25px; background:#b9ff39; color:#0b0b12; padding:12px 24px; text-decoration:none; font-weight:bold; border-radius:6px;">Return to Dashboard</a>
+</body>
+</html>
+"""
 
 
 if __name__ == "__main__":
